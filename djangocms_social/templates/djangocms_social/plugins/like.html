@@ -1,0 +1,9 @@
+{% load sekizai_tags %}
+
+{% addtoblock "js" %}<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50c06dd67b4d6ee4"></script>{% endaddtoblock %}
+
+<div id="social_like_wrapper">
+{% for object in objects %}
+    {{ object.render }}
+{% endfor %}
+</div>

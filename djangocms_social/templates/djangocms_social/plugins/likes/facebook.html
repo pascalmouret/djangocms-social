@@ -1,0 +1,6 @@
+{% load sekizai_tags %}
+
+<a class="addthis_button_facebook_like"
+    {% if title %}addthis:title="{{ title }}"{% endif %}
+    {% if description %}addthis:description="{{ description }}"{% endif %}
+    fb:like:layout="button_count"></a>
