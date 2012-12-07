@@ -1,4 +1,3 @@
 include README.md
 recursive-include djangocms_social/templates *
-recursive-include djangocms_social/models *
 recursive-exclude * *.pyc

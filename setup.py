@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from distutils.core import setup
+from setuptools import setup
 import djangocms_social
 
 import os
@@ -47,5 +47,7 @@ setup(
     classifiers=CLASSIFIERS,
     platforms=['OS Independent'],
     install_requires=REQUIREMENTS,
-    packages=['djangocms_social', 'djangocms_social.migrations'],
+    packages=['djangocms_social', 'djangocms_social.models', 'djangocms_social.migrations'],
+    include_package_data=True,
+    zip_safe=False
 )
