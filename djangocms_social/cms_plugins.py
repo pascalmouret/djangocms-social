@@ -19,12 +19,8 @@ class LikePlugin(CMSPluginBase):
             'fields': (('facebook', 'google',),)
         }),
         (_('Advanced'), {
-            'fields': ('title', 'description',)
-        })
+            'fields': ('title', 'description', 'image',)
+        }),
     )
-
-    def render(self, context, instance, placeholder):
-        context['objects'] = instance.get_objects
-        return context
 
 plugin_pool.register_plugin(LikePlugin)

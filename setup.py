@@ -14,6 +14,8 @@ DESCRIPTION = 'Social plugin for django-cms.'
 README = 'README.md'
 
 REQUIREMENTS = [
+	'django-filer',
+	'django-social-tags',
 ]
 
 CLASSIFIERS = [

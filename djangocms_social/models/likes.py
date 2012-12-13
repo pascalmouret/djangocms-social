@@ -3,8 +3,8 @@ from djangocms_social.models.base import RenderObject
 
 
 AVAILABLE = {
-    'facebook': 'djangocms_social.models.likes.FacebookLike',
-    'google': 'djangocms_social.models.likes.GooglePlusOne',
+    'facebook': 'FacebookLike',
+    'google': 'GooglePlusOne',
 }
 
 
