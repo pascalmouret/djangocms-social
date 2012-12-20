@@ -1,11 +1,12 @@
 {% load sekizai_tags social_meta %}
 
-{% addtoblock "js" %}<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50c06dd67b4d6ee4"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>{% endaddtoblock %}
 
 {% if instance.image %}{% set_tag 'image' instance.image.url %}{% endif %}
-
-<div class="social_like_wrapper">
-{% for object in instance.get_objects %}
-    {{ object.render }}
-{% endfor %}
+<div class="plugin_social">
+	<div class="addthis_toolbox addthis_default_style">
+	{% for object in instance.get_objects %}
+		{{ object.render }}
+	{% endfor %}
+	</div>
 </div>
