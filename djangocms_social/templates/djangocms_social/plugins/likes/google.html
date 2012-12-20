@@ -1,4 +1,3 @@
-<a class="addthis_button_google_plusone"
-    {% if title %}addthis:title="{{ title }}"{% endif %}
-    {% if description %}addthis:description="{{ description }}"{% endif %}
-    g:plusone:size="medium"></a>
+{% comment %}This needs to be in one line, otherwise javascript errors occur.{% endcomment %}
+{% comment %}No support for IE8 yet: http://www.addthis.com/forum/viewtopic.php?f=9&t=31953&p=119174{% endcomment %}
+<!--[if gt IE 8]><!--><a class="addthis_button_google_plusone" g:plusone:size="medium"{% if title %} addthis:title="{{ title }}"{% endif %}{% if description %} addthis:description="{{ description }}"{% endif %}></a><!--<![endif]-->

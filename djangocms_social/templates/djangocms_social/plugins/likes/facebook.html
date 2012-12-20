@@ -1,6 +1,2 @@
-{% load sekizai_tags %}
-
-<a class="addthis_button_facebook_like"
-    {% if title %}addthis:title="{{ title }}"{% endif %}
-    {% if description %}addthis:description="{{ description }}"{% endif %}
-    fb:like:layout="button_count"></a>
+{% comment %}This needs to be in one line, otherwise javascript errors occur.{% endcomment %}
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"{% if title %} addthis:title="{{ title }}"{% endif %}{% if description %} addthis:description="{{ description }}"{% endif %}></a>
