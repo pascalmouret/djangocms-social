@@ -40,3 +40,10 @@ class Like(CMSPlugin):
             'description': self.description,
             }
         return kwargs
+
+
+class Mail(CMSPlugin):
+    subject = models.CharField(_('subject'), max_length=100)
+    body = models.TextField(_('body'), default='', blank=True)
+    append_url = models.BooleanField(_('append url'), default=True,
+        help_text=_('Append the current web address at the end of the mail.'))

@@ -1,0 +1,5 @@
+{% load i18n %}
+
+<div class="plugin_social">
+    <a class="send_mail" href="mailto:?subject={{ subject }}&body={{ body }}{% if instance.append_url %}%0D%0A%0D%0A{{ request.build_absolute_uri }}{% endif %}">{% trans 'Share via E-Mail' %}</a>
+</div>
