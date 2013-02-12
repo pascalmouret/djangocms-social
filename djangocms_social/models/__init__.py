@@ -47,3 +47,17 @@ class Mail(CMSPlugin):
     body = models.TextField(_('body'), default='', blank=True)
     append_url = models.BooleanField(_('append url'), default=True,
         help_text=_('Append the current web address at the end of the mail.'))
+
+
+class Links(CMSPlugin):
+    facebook = models.URLField(_('facebook'), null=True, blank=True)
+#    googleplus = models.URLField(_('google plus'), null=True, blank=True)
+    twitter = models.URLField(_('twitter'), null=True, blank=True)
+    xing = models.URLField(_('xing'), null=True, blank=True)
+    linkedin = models.URLField(_('linkedin'), null=True, blank=True)
+#    youtube = models.URLField(_('youtube'), null=True, blank=True)
+    rss = models.URLField(_('rss'), null=True, blank=True)
+
+    links = [
+        'facebook', 'twitter', 'xing', 'linkedin', 'rss',
+    ]

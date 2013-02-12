@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
-from djangocms_social.models import Like, Mail
+from djangocms_social.models import Like, Mail, Links
 
 
 class LikePlugin(CMSPluginBase):
@@ -40,3 +40,22 @@ class MailPlugin(CMSPluginBase):
         return context
 
 plugin_pool.register_plugin(MailPlugin)
+
+
+class LinksPlugin(CMSPluginBase):
+    model = Links
+    name = _('Links')
+    render_template = 'djangocms_social/plugins/links.html'
+
+    module = 'Social'
+
+    def render(self, context, instance, placeholder):
+        context['instance'] = instance
+        context['links'] = {}
+        for link in instance.links:
+            value = getattr(instance, link, False)
+            if value:
+                context['links'][link] = value
+        return context
+
+plugin_pool.register_plugin(LinksPlugin)
